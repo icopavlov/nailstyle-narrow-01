@@ -27,7 +27,7 @@ const sliderSlideOptions = {
 //	dotsClass: "random-access",
 	speed: 500, 
 	touchThreshold: 20,
-//	autoplay: true,
+	autoplay: true,
 	autoplaySpeed: 6000,
 	infinite: true
 };
