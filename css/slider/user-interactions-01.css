@@ -1,0 +1,51 @@
+#slider {
+	--delay: 0.085s;
+	--translate-text-contents: 2rem;
+}
+
+/** 
+ * On new slide loading the text lines and the button
+ * enter into view sequentially upwards
+ */
+
+#slider .sup-title, #slider .title, #slider .description, #slider .button.go-to-section {
+	transform: translateY( var( --translate-text-contents ) );
+	opacity: 0;
+}
+
+#slider .slide.current .sup-title, #slider .slide.current .title, #slider .slide.current .description, #slider .slide.current .button.go-to-section {
+	animation-name: slide-up, fade-in; animation-duration: 0.4s, 0.2s; animation-timing-function: ease-out; animation-fill-mode: forwards;
+}
+
+#slider .slide.current .sup-title, #slider .slide.current .title {
+//	animation-delay: 0s;
+	animation-delay: calc( 0 * var( --delay ) );
+}
+
+#slider .slide.current .description {
+//	animation-delay: 0.125s;
+	animation-delay: calc( 1 * var( --delay ) );
+}
+
+#slider .slide.current .button.go-to-section {
+//	animation-delay: 0.25s;
+	animation-delay: calc( 2 * var( --delay ) );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

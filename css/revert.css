@@ -1,0 +1,190 @@
+/**
+ * General
+ */
+
+/* .cover-image,  */
+.button:after,
+/* header, */
+#main-nav.open .button.open-nav:after,
+#slider button:before, #slider button:after,
+/* .service:after, */
+#send-email form:after,
+.copyright-data {
+	background-image: none !important; background-color: red;
+}
+
+.cover-image:before {
+	display: none;
+}
+
+/* body, .service, .copyright-data {
+	color: rgba( 255, 255, 255, 1 );
+} */
+
+/* #main-nav .nav, .main, footer {
+	color: red;
+} */
+
+/**
+ * Buttons
+ */
+
+.button {
+	text-shadow: 0 0 1px rgba( 0, 0, 0, 0.25 );
+	box-shadow: 0 0 5px rgba( 0, 0, 0, 0.25 );
+}
+
+/* .button.open, .service .button.open, #contact-info .values {
+	border-color: rgba( 255, 255, 255, 1 );
+	color: rgba( 255, 255, 255, 1 );
+}
+
+.button.open:after {
+	background-color: rgba( 255, 255, 255, 1 );
+}
+
+.button:hover {
+	box-shadow: 0 0 10px rgba( 0, 0, 0, 0.45 );
+}
+
+.button.open:hover, .service .button.open:hover {
+	color: red;
+} */
+
+/* .scroll-to-top, .button.close, #social-net-links .button, #main-nav.open .button.open {
+	background-color: rgba( 255, 255, 255, 1 );
+	border-color: red;
+	color: red;
+} */
+
+/* .scroll-to-top:hover, .button.close:hover, #social-net-links .button:hover, #main-nav.open .button.open:hover {
+	color: rgba( 255, 255, 255, 1 );
+} */
+
+/**
+ * Header
+ */
+
+header, header .logo, header .logo a,
+#main-nav, /* #main-nav .nav, */ #main-nav .nav li a, 
+#quick-contact, #quick-contact .quick-contact-items {
+	max-width: none;
+	width: auto; height: auto;
+	margin: 0;
+	position: initial;
+//	line-height: 1;
+}
+
+header {
+	margin-top: 0;
+	border: none;
+}
+
+/* #main-nav .nav {
+	height: auto;
+} */
+
+/* #main-nav .nav li {
+	transform: none;
+	opacity: 1;
+} */
+
+#main-nav .nav li a {
+	font-size: 100%;
+	text-align: initial;
+	text-shadow: 0 0 1px rgba( 255, 0, 0, 0.85 );
+}
+
+#services .service-title,
+#services .service .button.open {
+	opacity: 1;
+}
+
+
+/**
+ * Contact
+ */
+
+#contact-info {
+	margin-bottom: 0;
+}
+
+#contact-info {
+//	margin: 0;
+	padding-top: 0; padding-bottom: 0;
+}
+
+.contact-info-items .values {
+	border: none;
+}
+
+.contact-info-items .values:not( :last-of-type ) {
+	margin-right: 0; margin-bottom: 0;
+}
+
+#send-email {
+	box-sizing: initial;
+	max-width: 28.0rem;
+}
+
+#send-email, #send-email form, #send-email label {
+	padding: 0;
+}
+
+#send-email form {
+	box-shadow: none;
+}
+
+#send-email dl {
+//	width: auto;
+	margin-bottom: 0;
+}
+
+#send-email dt {
+//	position: initial; // z-index: 4;
+}
+
+#send-email label, #send-email input, #send-email textarea {
+	position: relative; z-index: 3;
+}
+
+#send-email input, #send-email textarea {
+//	width: 100%;
+}
+
+
+/**
+ * Footer
+ */
+
+
+footer {
+	padding-bottom: 0;
+}
+
+footer .logo, .copyright-data {
+	height: auto;
+	position: initial;
+}
+
+#social-net-links li:last-of-type .button {
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

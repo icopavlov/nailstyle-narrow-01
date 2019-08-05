@@ -1,0 +1,97 @@
+#services {
+	--wrapper-animation-duration: 0.4s;
+	--wrapper-animation-delay: 0.5s;
+	
+	--service-info-animation-duration: 0.4s;
+	--service-info-animation-delay: var( --wrapper-animation-duration );
+	
+}
+
+.service {
+	position: initial;
+	overflow: visible;
+}
+
+.service-info {
+	width: 100%;
+	margin-top: 8px;
+	position: absolute; left: -10000px; top: 0;
+	opacity: 0;
+	box-shadow: none;
+}
+
+.service-info.current {
+	left: 0;
+//	opacity: 1;
+}
+
+.service-info-wrapper {
+	clear: both;
+	height: 0; overflow: hidden;
+	position: relative;
+}
+
+.button.close-service, 
+.button.close-service:after {
+	border-radius: 0;
+}
+
+.button.close-service {
+	left: auto; right: 0; top: 0;
+	border: none; box-shadow: none;
+}
+
+.button.close-service:after {
+	width: 100%; height: 100%;
+	padding: 0; margin: 0;
+	left: 0; top: 0; // transform: translate( 100%, -100% ); transform: none;
+	transition: transform 0.2s;
+}
+
+/* .button.close-service:hover:after {
+	transform: translate( 0, 0 );
+} */
+
+.service-info-wrapper, .service-info {
+	animation-fill-mode: forwards;
+}
+
+.service-info-wrapper {
+	animation-duration: var( --wrapper-animation-duration );
+}
+
+.row.service-open .service-info-wrapper {
+	animation-name: roll-down; 
+}
+
+.row.service-close .service-info-wrapper {
+	animation-name: roll-up; 
+}
+
+.service-info.current {
+	animation-name: fade-in; animation-duration: var( --service-info-animation-duration ); animation-delay: var( --service-info-animation-delay ); 
+}
+
+@keyframes roll-down {
+	
+	0% {
+		height: 0;
+	}
+	
+	100% {
+		height: var( --service-info-height );
+	}
+	
+}
+
+@keyframes roll-up {
+	
+	0% {
+		height: var( --service-info-height );
+	}
+	
+	100% {
+		height: 0;
+	}
+	
+}

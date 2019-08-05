@@ -1,0 +1,305 @@
+#main-nav {
+	box-sizing: border-box;
+	display: flex; flex-direction: row; justify-content: center; align-items: center;
+	width: 100%; 
+	position: relative; bottom: 0;
+	margin-top: 1.25rem;
+	border: none;
+}
+
+#main-nav .nav {
+	order: 2;
+	flex-direction: row; align-items: center; flex-wrap: nowrap;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+#main-nav .nav {
+	height: 100%; 
+	z-index: 3;
+}
+
+#main-nav li {
+//	min-width: 8rem;
+	margin-right: 2.5rem;
+//	border: 1px solid;
+}
+
+.button.close-nav {
+	margin-left: 1.25rem;
+	position: initial;	
+	border: 1px solid;
+}
+
+
+#main-nav .nav, 
+#main-nav.open .nav {
+	visibility: hidden;
+}
+
+#main-nav .nav:after, 
+#main-nav.open .nav:after {
+	top: 50%; bottom: 50%;
+}
+
+#main-nav li, 
+#main-nav.open li, 
+#main-nav .close-nav, 
+#main-nav.open .close-nav {
+	transform: translateY( var( --nav-links-start-pos ) );
+	opacity: 0;
+}
+
+
+#main-nav.close .nav {
+	visibility: visible;
+}
+
+#main-nav.close .nav:after {
+	top: 0; bottom: 0;
+}
+
+#main-nav.close li {
+	transform: translateY( 0 );
+	opacity: 1;
+}
+
+#main-nav.close .close-nav {
+	transform: translateY( 0 );
+	opacity: 1;
+}
+
+
+#main-nav .nav:after {
+	display: block;
+	position: absolute; left: 0; right: 0; z-index: -1;
+	background-color: var( --main-color );
+	content: "";
+	opacity: 0.95;
+//	box-shadow: 0 0 10rem var( --main-color );
+}
+
+#main-nav li {
+//	transition: none;
+	/* opacity: 0;
+	transition-property: transform, opacity; transition-delay: 0.25s; */
+}
+
+#main-nav .nav:after {
+	animation-duration: 0.85s;
+}
+
+#main-nav.open .nav {
+	animation: show-nav 0.05s;
+}
+
+#main-nav.open .nav:after {
+	animation-name: scale-up-nav;
+}
+
+#main-nav li, #main-nav .close-nav {
+	animation-duration: 0.25s; animation-timing-function: ease-in-out;
+}
+
+#main-nav.open li, 
+#main-nav.open .close-nav {
+	animation-name: slide-up-links; 
+}
+
+#main-nav.open .close-nav {
+	animation-name: slide-up-button-close; animation-delay: 0.5s;
+}
+
+
+#main-nav.open .nav, #main-nav.open .nav:after, #main-nav.open li, #main-nav.open .close-nav, 
+#main-nav.close .nav, #main-nav.close .nav:after, #main-nav.close li, #main-nav.close .close-nav {
+	animation-fill-mode: forwards;
+}
+
+
+#main-nav.open li:nth-child( 1 ) {
+	animation-delay: 0.25s;
+}
+
+#main-nav.open li:nth-child( 2 ) {
+	animation-delay: 0.4s;
+}
+
+#main-nav.open li:nth-child( 3 ) {
+	animation-delay: 0.55s;
+}
+
+#main-nav.open li:nth-child( 4 ) {
+	animation-delay: 0.7s;
+}
+
+
+#main-nav.close li {
+	animation-name: slide-down-links;
+}
+
+#main-nav.close li:nth-child( 1 ) {
+	animation-delay: 0s;
+}
+
+#main-nav.close li:nth-child( 2 ) {
+	animation-delay: 0.15s;
+}
+
+#main-nav.close li:nth-child( 3 ) {
+	animation-delay: 0.3s;
+}
+
+#main-nav.close li:nth-child( 4 ) {
+	animation-delay: 0.45s;
+}
+
+#main-nav.close .nav:after {
+	animation-name: scale-down-nav; animation-duration: 0.5s; animation-delay: 0.7s;
+}
+
+#main-nav.close .nav {
+	animation-name: hide-nav; animation-duration: 0.05s; animation-delay: 1.2s;
+}
+
+#main-nav.close .close-nav {
+	animation-name: slide-down-button-close; animation-delay: 0.25s;
+}
+
+
+
+
+@keyframes scale-up-nav {
+	
+	0% {
+		top: 50%; bottom: 50%;
+	}
+	
+	30% {
+		top: 15%; bottom: 15%;
+	}
+	
+	45% {
+		top: 25%; bottom: 25%;
+	}
+	
+	85% {
+		top: 25%; bottom: 25%;
+	}
+	
+	100% {
+		top: 0; bottom: 0;
+	}
+	
+}
+
+@keyframes scale-down-nav {
+	
+	0% {
+		top: 0; bottom: 0;
+	}
+	
+	50% {
+		top: 0; bottom: 50%;
+	}
+	
+	100% {
+		top: 50%; bottom: 50%;
+	}
+	
+}
+
+@keyframes slide-up-links {
+	
+	0% {
+		transform: translateY( var( --nav-links-start-pos ) );
+		opacity: 0;
+	}
+	
+	100% {
+		transform: translateY( 0 );
+		opacity: 1;
+	}
+	
+}
+
+@keyframes slide-down-links {
+	
+	0% {
+		transform: translateY( 0 );
+		opacity: 1;
+	}
+	
+	100% {
+		transform: translateY( calc( -1 * var( --nav-links-start-pos ) ) );
+		opacity: 0;
+	}
+	
+}
+
+@keyframes hide-nav {
+	
+	0% {
+		visibility: hidden;
+	}
+	
+	100% {
+		visibility: hidden;
+	}
+	
+}
+
+
+@keyframes show-nav {
+	
+	0% {
+		visibility: visible;
+	}
+	
+	100% {
+		visibility: visible;
+	}
+	
+}
+
+@keyframes slide-down-button-close {
+	
+	0% {
+		transform: translateY( 0 );
+		opacity: 1;
+	}
+	
+	100% {
+		transform: translateY( calc( -1 * var( --button-close-start-pos ) ) );
+		opacity: 0;
+	}
+	
+}
+
+@keyframes slide-up-button-close {
+	
+	0% {
+		transform: translateY( var( --button-close-start-pos ) );
+		opacity: 0;
+	}
+	
+	100% {
+		transform: translateY( 0 );
+		opacity: 1;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
