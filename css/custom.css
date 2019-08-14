@@ -327,10 +327,12 @@ header .logo {
 
 .button.scroll-to-top {
 	right: 1.25rem; top: 5.75rem;
-	border: none; border-radius: 0;
+//	border: none; border-radius: 0;
 	box-shadow: none;
-	background-color: transparent;
-	color: var( --main-color );
+	/* background-color: transparent;
+	color: var( --main-color ); */
+	background-color: var( --main-color );
+	color: rgba( 255, 255, 255, 1 );
 }
 
 .button.scroll-to-top:before {
